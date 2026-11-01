@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
 :root {
-  --background-color: #91f5f0;
-  --secondary-color: #537574;
-  --tertiary-color: #f5b390;
+  --background-color: oklch(92% 0.08 185); /* Modern, consistent light teal */
+  --secondary-color: oklch(52% 0.03 185); /* Stable muted dark teal */
+  --tertiary-color: oklch(79% 0.11 55); /* Balanced pastel peach */
 }
 
 * {
@@ -37,6 +37,25 @@ nav {
 
 .navbar {
   display: none;
+  background-color: var(--tertiary-color);
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  right: 0;
+  text-align: center;
+  padding: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar.show {
+  display: flex;
 }
 
 main {
@@ -319,6 +338,17 @@ section {
 
     .material-symbols-outlined {
       display: none;
+    }
+
+    .navbar {
+      display: flex;
+      background-color: var(--tertiary-color);
+      border: 1px solid red;
+    }
+
+    .navlinks {
+      display: flex;
+      /* gap: 1rem; */
     }
   }
 
